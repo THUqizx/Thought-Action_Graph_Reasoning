@@ -9,7 +9,6 @@ import os
 from typing import List, Dict, Optional
 import openai
 
-
 class OpenAIClient:
     """
     Client for interacting with OpenAI API.
@@ -107,7 +106,6 @@ class OpenAIClient:
         
         return self.chat_completion(messages, model=model, **kwargs)
 
-
 def main():
     """
     Main function with usage examples.
@@ -151,7 +149,6 @@ def main():
     
     response = client.chat_completion(messages)
     print(response)
-
 
 if __name__ == "__main__":
     main()
