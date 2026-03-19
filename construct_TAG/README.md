@@ -15,7 +15,7 @@ Create a `config.json` file with the following structure:
 
 ```json
 {
-  "sparql_endpoint": "http://101.6.69.142:3001/sparql/",
+  "sparql_endpoint": "YOUR_SPARQL_ENDPOINT",
   "api_key": "YOUR_API_KEY_HERE",
   "model_name": "gpt-4o",
   
