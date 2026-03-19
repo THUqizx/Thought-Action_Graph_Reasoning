@@ -121,42 +121,6 @@ Training data for navigator and executor components:
 
 Users can fine-tune models on these datasets for improved performance.
 
-## Installation
-
-### Requirements
-
-- Python 3.8+
-- PyTorch >= 1.13.0
-- Transformers >= 4.30.0
-- Sentence Transformers >= 2.0.0
-- FastText
-- SPARQLWrapper
-- OpenAI API client
-
-### Dependencies
-
-Install all dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Models
-
-Download required models:
-
-1. **LLaMA3.1-8B-Instruct** (for reasoning):
-   - Download from Hugging Face
-   - Path: `meta-llama/Meta-Llama-3.1-8B-Instruct`
-
-2. **Qwen3-Embedding-4B** (for encoding):
-   - Download from Hugging Face
-   - Path: `Qwen/Qwen3-Embedding-4B`
-
-3. **FastText** (for graph filtering):
-   - Download: `fasttext download model dbpedia`
-   - Path: `dbpedia.bin`
-
 ## Configuration
 
 Create a `config.json` file based on `config.json.example`:
@@ -166,10 +130,10 @@ Create a `config.json` file based on `config.json.example`:
   "sparql_endpoint": "http://your-sparql-endpoint.com/sparql/",
   "paths": {
     "llama3_1_model_path": "/path/to/Llama-3.1-8B-Instruct",
-    "tag_path": "/path/to/TAGv2(WebQSP+CWQ,Freebase).pkl",
+    "tag_path": "/path/to/TAG.pkl",
     "qwen3_embedding_model_path": "/path/to/Qwen3-Embedding-4B/",
-    "query_embeddings_path": "/path/to/WebQSP_CWQ_Question_Embeddings.pkl",
-    "answer_type_name_embeddings_path": "/path/to/AnswerTypeName_WebQSP_CWQ_Embeddingsv2.pkl",
+    "query_embeddings_path": "/path/to/Question_Embeddings.pkl",
+    "answer_type_name_embeddings_path": "/path/to/AnswerTypeName_Embeddings.pkl",
     "fasttext_embeddings_path": "/path/to/FastText/dbpedia.bin"
   },
   "parameters": {
@@ -202,30 +166,6 @@ python eval_CWQ.py      # Evaluate on CWQ
 python eval_GrailQA.py  # Evaluate on GrailQA
 ```
 
-## Citation
-
-If you use this code in your research, please cite our paper:
-
-```bibtex
-@article{tag2024,
-  title={TAG: Thought-Action Graph for Reasoning over Knowledge Graphs},
-  author={Your Name et al.},
-  journal={arXiv preprint arXiv:xxxx.xxxxx},
-  year={2024}
-}
-```
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Freebase knowledge graph
-- LLaMA3.1 team for open-weight models
-- OpenAI for GPT models
-- Hugging Face for transformer library
-
-## Contact
-
-For questions or issues, please open an issue on GitHub or contact the authors.
