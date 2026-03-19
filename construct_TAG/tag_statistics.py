@@ -7,7 +7,6 @@ about the Thought-Action Graph structure.
 
 from ThoughtActionGraph import ThoughtActionGraph
 
-
 def compute_statistics(tag_path: str) -> dict:
     """
     Compute statistics for a Thought-Action Graph.
@@ -37,7 +36,6 @@ def compute_statistics(tag_path: str) -> dict:
     
     return statistics
 
-
 def print_statistics(statistics: dict) -> None:
     """
     Print statistics in a formatted way.
@@ -65,7 +63,6 @@ def print_statistics(statistics: dict) -> None:
     
     print("\n" + "=" * 60)
 
-
 def main():
     """
     Main function to compute and display TAG statistics.
@@ -86,7 +83,6 @@ def main():
         print_statistics(statistics)
     else:
         print("Please provide tag_path or run with config.json")
-
 
 if __name__ == "__main__":
     main()
