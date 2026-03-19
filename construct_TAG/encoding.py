@@ -12,7 +12,6 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 from utils import encode_queries, typeName_all, load_config
 
-
 def encode_questions(Qwen3Model: SentenceTransformer, question_list: List[str], 
                      batch_size: int = 10) -> Dict[str, Any]:
     """
@@ -27,7 +26,6 @@ def encode_questions(Qwen3Model: SentenceTransformer, question_list: List[str],
         Dictionary mapping each question to its embedding.
     """
     return encode_queries(Qwen3Model, question_list, batch_size)
-
 
 def encode_answer_types(Qwen3Model: SentenceTransformer, mac_data: List[Dict[str, Any]], 
                         batch_size: int = 10, sparql_endpoint: str = None) -> Dict[str, Any]:
@@ -65,7 +63,6 @@ def encode_answer_types(Qwen3Model: SentenceTransformer, mac_data: List[Dict[str
     
     return encode_queries(Qwen3Model, answer_type_names, batch_size)
 
-
 def encode_mac_data(Qwen3Model: SentenceTransformer, mac_path: str, 
                     question_save_path: str, answertypename_save_path: str,
                     batch_size: int = 10, sparql_endpoint: str = None) -> None:
@@ -101,7 +98,6 @@ def encode_mac_data(Qwen3Model: SentenceTransformer, mac_path: str,
         pickle.dump(answertypename_embeddings_dict, f)
     print(f"Answer type embeddings saved to {answertypename_save_path}")
 
-
 def main():
     """
     Main function to encode MAC data.
@@ -129,7 +125,6 @@ def main():
     encode_mac_data(Qwen3Model, mac_path, question_save_path, answertypename_save_path, batch_size, sparql_endpoint)
     
     print("\nEncoding completed!")
-
 
 if __name__ == "__main__":
     main()
