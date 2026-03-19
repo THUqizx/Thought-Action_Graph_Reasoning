@@ -8,7 +8,6 @@ knowledge graph structure used in Thought-Action Graph construction.
 import pickle
 from typing import Dict, List, Tuple, Any, Optional, Set
 
-
 class ThoughtActionGraph:
     """
     A dual-layer graph structure representing both Thought and Action layers.
