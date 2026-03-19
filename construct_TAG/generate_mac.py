@@ -11,7 +11,6 @@ import time
 from typing import Dict, List, Any, Optional
 from tqdm import tqdm
 
-
 def load_json(path: str) -> Any:
     """
     Load JSON data from a file.
@@ -25,7 +24,6 @@ def load_json(path: str) -> Any:
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-
 def save_json(data: Any, path: str) -> None:
     """
     Save data to a JSON file.
@@ -36,7 +34,6 @@ def save_json(data: Any, path: str) -> None:
     """
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
-
 
 class MACGenerator:
     """
@@ -88,7 +85,6 @@ class MACGenerator:
                 time.sleep(self.delay)
             attempt += 1
         return None
-
 
 def process_webqsp(data: Dict[str, Any], generator: MACGenerator, prompt: str, 
                    save_path: str, utils_module) -> None:
@@ -165,7 +161,6 @@ def process_webqsp(data: Dict[str, Any], generator: MACGenerator, prompt: str,
     
     save_json(result_mac, save_path)
 
-
 def process_cwq(data: List[Dict[str, Any]], generator: MACGenerator, prompt: str,
                 save_path: str, utils_module) -> None:
     """
@@ -241,7 +236,6 @@ def process_cwq(data: List[Dict[str, Any]], generator: MACGenerator, prompt: str
             save_json(result_mac, save_path)
     
     save_json(result_mac, save_path)
-
 
 def process_grailqa(data: List[Dict[str, Any]], generator: MACGenerator, prompt: str,
                     save_path: str, utils_module) -> None:
@@ -335,7 +329,6 @@ def process_grailqa(data: List[Dict[str, Any]], generator: MACGenerator, prompt:
     
     save_json(result_mac, save_path)
 
-
 def merge_all_mac(webqsp_path: str, cwq_path: str, grailqa_path: str, merged_path: str) -> None:
     """
     Merge MAC data from WebQSP, CWQ, and GrailQA into a single file.
@@ -367,7 +360,6 @@ def merge_all_mac(webqsp_path: str, cwq_path: str, grailqa_path: str, merged_pat
     
     save_json(result, merged_path)
     print(f"Merged MAC saved to: {merged_path}")
-
 
 def main():
     """
@@ -446,7 +438,6 @@ def main():
     print("\n" + "=" * 50)
     print("MAC generation completed!")
     print("=" * 50)
-
 
 if __name__ == "__main__":
     main()
