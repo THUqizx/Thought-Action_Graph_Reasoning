@@ -8,12 +8,6 @@ The Thought-Action Graph is a dual-layer graph structure that enables reasoning 
 - **Thought Layer**: Abstract ontological reasoning paths
 - **Action Layer**: Concrete entity-level action chains
 
-## Installation
-
-```bash
-pip install torch transformers sentence-transformers fasttext pandas
-```
-
 ## Configuration
 
 Create a `config.json` file with the following structure:
@@ -22,15 +16,15 @@ Create a `config.json` file with the following structure:
 {
   "paths": {
     "llama3_1_model_path": "/path/to/Llama-3.1-8B-Instruct",
-    "tag_path": "/path/to/TAGv2(WebQSP+CWQ,Freebase).pkl",
+    "tag_path": "/path/to/TAG.pkl",
     "qwen3_embedding_model_path": "/path/to/Qwen3-Embedding-4B/",
-    "query_embeddings_path": "/path/to/WebQSP_CWQ_Question_Embeddings.pkl",
-    "answer_type_name_embeddings_path": "/path/to/AnswerTypeName_WebQSP_CWQ_Embeddingsv2.pkl",
+    "query_embeddings_path": "/path/to/Question_Embeddings.pkl",
+    "answer_type_name_embeddings_path": "/path/to/AnswerTypeName_Embeddings.pkl",
     "fasttext_embeddings_path": "/path/to/FastText/dbpedia.bin",
     "webqsp_test_path": "/path/to/WebQSP/WebQSP.test.json",
-    "predict_type_name_prompt_path": "/path/to/predict_typeName_prompt.txt",
-    "generate_meta_action_chain_prompt_path": "/path/to/generate_meta_action_chain_prompt.txt",
-    "reasoning_prompt_path": "/path/to/reasoning_promptv2.txt",
+    "predict_type_name_prompt_path": "/prompt/predict_typeName_prompt.txt",
+    "generate_meta_action_chain_prompt_path": "/prompt/generate_meta_action_chain_prompt.txt",
+    "reasoning_prompt_path": "/prompt/reasoning_prompt.txt",
     "answer_save_path": "/path/to/save/results"
   },
   "sparql": {
