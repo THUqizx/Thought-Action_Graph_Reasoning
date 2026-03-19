@@ -9,22 +9,6 @@ The Thought-Action Graph (TAG) is a dual-layer graph structure that represents b
 - **Thought Layer**: Ontology-level reasoning chains
 - **Action Layer**: Entity-level execution chains
 
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-## Requirements
-
-- Python 3.8+
-- SPARQLWrapper
-- openai
-- sentence-transformers
-- tqdm
-- numpy
-- pickle
-
 ## Configuration
 
 Create a `config.json` file with the following structure:
