@@ -18,7 +18,7 @@
   "prompts": {
     "predict_type_name": "/path/to/data/predict_typeName_prompt.txt",
     "generate_meta_action_chain": "/path/to/data/generate_meta_action_chain_prompt.txt",
-    "reasoning": "/path/to/data/reasoning_promptv2.txt"
+    "reasoning": "/path/to/data/reasoning_prompt.txt"
   },
   "data": {
     "input_dataset": "/path/to/data/eval_with_macs_WebQSP.json",
