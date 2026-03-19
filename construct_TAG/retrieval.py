@@ -14,7 +14,6 @@ from sentence_transformers import SentenceTransformer
 from ThoughtActionGraph import ThoughtActionGraph
 from utils import load_config, encode_queries, RetrievalSimilarQueries
 
-
 def retrieval_from_start(graph: ThoughtActionGraph, 
                          start_name: str, 
                          start_attrs: Dict[str, Any]
@@ -68,7 +67,6 @@ def retrieval_from_start(graph: ThoughtActionGraph,
 
     return all_complete_paths
 
-
 def prune_paths(path_list: List[List[Tuple[Dict[str, Any], str, Dict[str, Any]]]], 
                 target_tail_name: str
                 ) -> List[List[Tuple[Dict[str, Any], str, Dict[str, Any]]]]:
@@ -98,7 +96,6 @@ def prune_paths(path_list: List[List[Tuple[Dict[str, Any], str, Dict[str, Any]]]
             filtered_paths.append(path)
     
     return filtered_paths
-
 
 def thought_node_to_action_node(graph: ThoughtActionGraph,
                                 head_name: str,
@@ -166,7 +163,6 @@ def thought_node_to_action_node(graph: ThoughtActionGraph,
 
     return unique_tails
 
-
 def action_node_to_thought_node(graph: ThoughtActionGraph,
                                 tail_name: str,
                                 tail_attrs: Dict[str, Any],
@@ -233,7 +229,6 @@ def action_node_to_thought_node(graph: ThoughtActionGraph,
             unique_heads.append(head)
 
     return unique_heads
-
 
 def retrieval_from_start_to_end(graph: ThoughtActionGraph,
                                 start_name: str,
@@ -317,7 +312,6 @@ def retrieval_from_start_to_end(graph: ThoughtActionGraph,
     
     return result_paths
 
-
 def filter_action_chains(Qwen3Model: SentenceTransformer, 
                          action_chains: List[List[Tuple[Dict[str, Any], str, Dict[str, Any]]]],
                          text: str, 
@@ -394,7 +388,6 @@ def action_chain_to_thought_chain(graph: ThoughtActionGraph,
     
     return thought_chains
 
-
 def main():
     """
     Main function for demonstration and testing.
@@ -421,7 +414,6 @@ def main():
     print(f"\nRelation type counts:")
     for relation_type, count in relation_counts.items():
         print(f"  {relation_type}: {count}")
-
 
 if __name__ == "__main__":
     main()
