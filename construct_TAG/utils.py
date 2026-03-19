@@ -14,7 +14,6 @@ from typing import Dict, List, Tuple, Any, Optional
 from SPARQLWrapper import SPARQLWrapper, JSON
 import pickle
 
-
 def load_config(config_path: str) -> Dict[str, Any]:
     """
     Load configuration from a JSON file.
@@ -28,7 +27,6 @@ def load_config(config_path: str) -> Dict[str, Any]:
     with open(config_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-
 def save_config(config: Dict[str, Any], config_path: str) -> None:
     """
     Save configuration to a JSON file.
@@ -39,7 +37,6 @@ def save_config(config: Dict[str, Any], config_path: str) -> None:
     """
     with open(config_path, 'w', encoding='utf-8') as f:
         json.dump(config, f, indent=2)
-
 
 def execute_sparql(sparql_txt: str, sparql_endpoint: str) -> Optional[Dict[str, Any]]:
     """
@@ -62,7 +59,6 @@ def execute_sparql(sparql_txt: str, sparql_endpoint: str) -> Optional[Dict[str, 
         print(f"SPARQL query failed: {e}")
         return None
 
-
 def extract_freebase_id(uri: str) -> str:
     """
     Extract Freebase ID from a URI.
@@ -76,7 +72,6 @@ def extract_freebase_id(uri: str) -> str:
     if uri.startswith("http://rdf.freebase.com/ns/"):
         return uri[len("http://rdf.freebase.com/ns/"):]
     return uri
-
 
 def entityName(entity_uri: str, sparql_endpoint: str) -> str:
     """
@@ -112,7 +107,6 @@ WHERE {{
                 return tail_entity_data['value']
     return "UnName_Entity"
 
-
 def typeName(type_id: str, sparql_endpoint: str) -> Optional[str]:
     """
     Get the English name of a Freebase type.
@@ -144,7 +138,6 @@ WHERE {{
                 'value' in type_name_data):
                 return type_name_data['value']
     return None
-
 
 def typeName_all(type_id: str, sparql_endpoint: str) -> List[str]:
     """
@@ -181,7 +174,6 @@ WHERE {{
     typename_all = list(dict.fromkeys(typename_all))
     return typename_all
 
-
 def encode_queries(Qwen3Model, queries: List[str], batch_size: int = 10) -> Dict[str, Any]:
     """
     Encode a list of queries using the Qwen3 embedding model.
@@ -215,7 +207,6 @@ def encode_queries(Qwen3Model, queries: List[str], batch_size: int = 10) -> Dict
     
     return embedding_dict
 
-
 def extract_mac_content(text: str) -> List[str]:
     """
     Extract content between <MAC> and </MAC> tags.
@@ -230,7 +221,6 @@ def extract_mac_content(text: str) -> List[str]:
     matches = re.findall(pattern, text, re.DOTALL)
     return matches
 
-
 def sparql_preprocess(sparql: str) -> str:
     """
     Remove SPARQL prefix declarations from a query.
@@ -244,7 +234,6 @@ def sparql_preprocess(sparql: str) -> str:
     prefix_string = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX : <http://rdf.freebase.com/ns/> \n"
     return sparql.replace(prefix_string, "")
 
-
 def save_to_pickle(data: Any, save_path: str) -> None:
     """
     Save data to a pickle file.
@@ -255,7 +244,6 @@ def save_to_pickle(data: Any, save_path: str) -> None:
     """
     with open(save_path, 'wb') as f:
         pickle.dump(data, f)
-
 
 def load_from_pickle(load_path: str) -> Any:
     """
