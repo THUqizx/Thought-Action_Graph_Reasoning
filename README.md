@@ -1,4 +1,4 @@
-<img width="6050" height="2447" alt="TAG_Construction" src="https://github.com/user-attachments/assets/b09ac181-a38f-4724-b50c-26196174c34e" /><img width="6050" height="2447" alt="TAG_Construction" src="https://github.com/user-attachments/assets/cca598b8-57ed-4f32-948f-c96f6f7fdba8" /><img width="6059" height="3745" alt="instruction" src="https://github.com/user-attachments/assets/aa0cfd9d-5c4a-4bb0-a83b-fba3980b0f6f" /># TAG: Thought-Action Graph for Reasoning over Knowledge Graphs
+# TAG: Thought-Action Graph for Reasoning over Knowledge Graphs
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
