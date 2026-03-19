@@ -1,0 +1,40 @@
+{
+  "sparql_endpoint": "YOUR_SPARQL_ENDPOINT",
+  "models": {
+    "llama3_1": {
+      "path": "/path/to/Llama-3.1-8B-Instruct"
+    },
+    "qwen3_embedding": {
+      "path": "/path/to/Qwen3-Embedding-4B/"
+    },
+    "fasttext": {
+      "path": "/path/to/FastText/dbpedia.bin"
+    }
+  },
+  "embeddings": {
+    "query_embeddings": "/path/to/Embeddings/Question_Embeddings.pkl",
+    "answer_type_name_embeddings": "/path/to/Embeddings/AnswerTypeName_Embeddingsv2.pkl"
+  },
+  "prompts": {
+    "predict_type_name": "/path/to/data/predict_typeName_prompt.txt",
+    "generate_meta_action_chain": "/path/to/data/generate_meta_action_chain_prompt.txt",
+    "reasoning": "/path/to/data/reasoning_promptv2.txt"
+  },
+  "data": {
+    "input_dataset": "/path/to/data/eval_with_macs_WebQSP.json",
+    "output_directory": "/path/to/output/results"
+  },
+  "tag_config": {
+    "explore_breadth": 5,
+    "explore_depth": 3,
+    "number_of_triples": 100
+  },
+  "openai": {
+    "api_key": "YOUR_OPENAI_API_KEY",
+    "base_url": "YOUR_OPENAI_API_URL",
+    "default_model": "gpt-4o-mini",
+    "max_attempts": 5,
+    "delay_seconds": 30
+  },
+  "cuda_devices": "0"
+}

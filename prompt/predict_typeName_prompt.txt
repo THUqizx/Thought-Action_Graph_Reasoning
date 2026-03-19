@@ -1,0 +1,16 @@
+Please read the example first, and then predict the type name of the answer based on the given question. Please note that you only need to output the type name of the predicted answer, and do not need to output specific answers or other content.
+
+[examples]
+Question: what is the name of justin bieber brother?
+The type name of the answer:
+Person
+
+Question: what are the 2 conferences in the nfl?
+The type name of the answer:
+American football conference
+
+Question: what are the 5 biggest cities in the usa?
+The type name of the answer:
+City/Town/Village
+
+Please write the type name of the answer corresponding to the following question based on the above example:

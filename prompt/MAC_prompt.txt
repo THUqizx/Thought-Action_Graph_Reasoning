@@ -1,0 +1,12 @@
+The meta-action in SPARQL refers to single step operations such as SELECT, WHERE, GROUP, ORDER, FILTER, etc. on a database. Please read the example of generating a meta-action chain first, and then write a meta-action chain from the head_entity to the tail_entity based on the questions, answers, and SPARQL statements in the given data. Among them, the meta-action chain needs to start from the head_entity, with the middle node being the meta operation. The meta operation in WHERE for the triplet pattern is represented by WHERE_TRI_PATTERN, and the filtering operation in WHERE is represented by WHERE_FILTER. If there are other WHERE operations that are not mentioned, you can also name them in the above way. The specific operation description is in the parentheses of the meta operation, such as attributes, triplet patterns, etc., and ends at the tail_entity. Please note that you only need to write the meta-action chain in <MAC> and </MAC>, no other content is required.
+
+[example]
+Question: when did kings last win stanley cup?
+Answer: 2014 Stanley Cup Finals
+SPARQL: PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0jnq8)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0jnq8 ns:sports.sports_team.championships ?x .\n?x ns:time.event.end_date ?sk0 .\n}\nORDER BY DESC(xsd:datetime(?sk0))\nLIMIT 1\n
+Head_Entity: Los Angeles Kings
+Tail_Entity: 2014 Stanley Cup Finals
+meta-action chain:
+<MAC>Los Angeles Kings-->SELECT(DISTINCT ?x)-->WHERE_TRI_PATTERN(Los Angeles Kings sports.sports_team.championships ?x)-->WHERE_TRI_PATTERN(?x time.event.end_date ?sk0)-->WHERE_FILTER(?x != ns:m.0jnq8)-->WHERE_FILTER(!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))-->ORDER BY(DESC(xsd:datetime(?sk0)))-->LIMIT(1)-->2014 Stanley Cup Finals</MAC>
+
+Please write the following meta-action chain based on the above example:

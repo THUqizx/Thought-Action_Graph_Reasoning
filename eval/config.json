@@ -1,0 +1,34 @@
+{
+    "data_paths": {
+        "webqsp_no_answer": "data/WebQSP_no_answer.json",
+        "cwq_no_answer": "data/CWQ_no_answer.json",
+        "grailqa_no_answer": "data/GrailQA_no_answer.json",
+
+        "webqsp_raw_answer": "/data/llama3_1_Reasoning_WebQSP.json",
+        "webqsp_processed_answer": "/data/llama3_1_Reasoning_WebQSP_processing.json",
+        "webqsp_result": "/data/llama3_1_Reasoning_WebQSP_result.json",
+
+        "cwq_raw_answer": "/data/llama3_1_Reasoning_CWQ.json",
+        "cwq_processed_answer": "/data/llama3_1_Reasoning_CWQ_processing.json",
+        "cwq_result": "/data/llama3_1_Reasoning_CWQ_result.json",
+        
+        "grailqa_raw_answer": "/data/llama3_1_Reasoning_GrailQA.json",
+        "grailqa_processed_answer": "/data/llama3_1_Reasoning_GrailQA_processing.json",
+        "grailqa_result": "/data/llama3_1_Reasoning_GrailQA_result.json",  
+
+        "gpt4o_raw_answer": "/data/GPT4o_mini_Reasoning_WebQSP_results.json",
+        "gpt4o_processed_answer": "/data/GPT4o_mini_Reasoning_WebQSP_processing.json"
+    },
+    "model_paths": {
+        "llama3_1": "/path/to/llama3.1/model"
+    },
+    "output_paths": {
+        "base_dir": "/path/to/output/directory"
+    },
+    "llm_config": {
+        "base_url": "your_openai_api_url",
+        "model_name": "gpt-4o-mini",
+        "max_new_tokens": 1024,
+        "system_prompt": "You are a knowledge graph expert in the field of natural language processing."
+    }
+}
