@@ -12,7 +12,6 @@ from tqdm import tqdm
 from ThoughtActionGraph import ThoughtActionGraph
 from utils import typeName_all, load_config
 
-
 def option_decompose(option: str) -> Tuple[str, str]:
     """
     Decompose an option string into option and action parts.
@@ -35,7 +34,6 @@ def option_decompose(option: str) -> Tuple[str, str]:
         return option_name, action
     else:
         return None, None
-
 
 def mac_to_triples(data_with_mac: Dict[str, Any], sparql_endpoint: str) -> Tuple[List[List[Any]], List[List[Any]], List[List[Any]], List[List[Any]]]:
     """
@@ -208,7 +206,6 @@ def mac_to_triples(data_with_mac: Dict[str, Any], sparql_endpoint: str) -> Tuple
     
     return thought_triples, action_triples, ontology_to_entity_triples, option_to_action_triples
 
-
 def construct_tag_from_mac(mac_path: str, tag_path: str, sparql_endpoint: str) -> None:
     """
     Construct Thought-Action Graph from MAC data and save to file.
@@ -241,7 +238,6 @@ def construct_tag_from_mac(mac_path: str, tag_path: str, sparql_endpoint: str) -
     
     tag.save_to_file(tag_path)
 
-
 def main():
     """
     Main function to construct TAG from MAC data.
@@ -264,7 +260,6 @@ def main():
     construct_tag_from_mac(mac_path, tag_path, sparql_endpoint)
     
     print(f"\nTAG construction completed! Saved to {tag_path}")
-
 
 if __name__ == "__main__":
     main()
