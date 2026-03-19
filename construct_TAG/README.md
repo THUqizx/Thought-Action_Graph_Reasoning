@@ -17,7 +17,7 @@ Create a `config.json` file with the following structure:
 {
   "sparql_endpoint": "YOUR_SPARQL_ENDPOINT",
   "api_key": "YOUR_API_KEY_HERE",
-  "model_name": "gpt-4o",
+  "model_name": "gpt-4o-mini",
   
   "paths": {
     "data_dir": "YOUR_DATA_DIR_HERE",
