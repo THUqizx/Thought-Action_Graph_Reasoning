@@ -1,0 +1,43 @@
+{
+  "sparql_endpoint": "YOUR_SPARQL_ENDPOINT",
+  "api_key": "YOUR_API_KEY",
+  "model_name": "gpt-4o-mini",
+  
+  "paths": {
+    "data_dir": "YOUR_DATA_DIR_HERE",
+    "tag_dir": "YOUR_TAG_DIR_HERE",
+    "embedding_dir": "YOUR_EMBEDDING_DIR_HERE",
+    "prompt_file": "/data/MAC_prompt.txt",
+    
+    "webqsp_data": "YOUR_WEBQSP_DATA_PATH_HERE",
+    "cwq_data": "YOUR_CWQ_DATA_PATH_HERE",
+    "grailqa_data": "YOUR_GRAILQA_DATA_PATH_HERE",
+    
+    "webqsp_tag": "YOUR_WEBQSP_TAG_PATH_HERE",
+    "cwq_tag": "YOUR_CWQ_TAG_PATH_HERE",
+    "grailqa_tag": "YOUR_GRAILQA_TAG_PATH_HERE",
+    
+    "webqsp_cwq_tag": "YOUR_WEBQSP_CWQ_TAG_PATH_HERE",
+    "webqsp_cwq_grailqa_tag": "YOUR_WEBQSP_CWQ_GRAILQA_TAG_PATH_HERE",
+    
+    "question_embeddings": "YOUR_QUESTION_EMBEDDINGS_PATH_HERE",
+    "answertypename_embeddings": "YOUR_ANSWERTYPE_EMBEDDINGS_PATH_HERE"
+  },
+  
+  "model": {
+    "qwen3_embedding_path": "YOUR_QWEN3_EMBEDDING_PATH_HERE",
+    "batch_size": 10
+  },
+  
+  "gpt_settings": {
+    "max_attempts": 5,
+    "delay": 30,
+    "temperature": 0.7,
+    "max_tokens": null
+  },
+  
+  "retrieval": {
+    "top_k": 3,
+    "max_depth": 10
+  }
+}
