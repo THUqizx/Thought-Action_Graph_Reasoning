@@ -37,7 +37,7 @@ Create a `config.json` file in the root directory with the following structure:
     "reasoning": "/path/to/reasoning_prompt.txt"
   },
   "data": {
-    "input_dataset": "/path/to/input_dataset.json",
+    "input_dataset": "/path/to/data/eval_with_macs_WebQSP.json",
     "output_directory": "/path/to/output/results"
   },
   "tag_config": {
