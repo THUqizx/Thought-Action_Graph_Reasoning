@@ -1,4 +1,4 @@
-# TAG: Thought-Action Graph for Reasoning over Knowledge Graphs
+<img width="6050" height="2447" alt="TAG_Construction" src="https://github.com/user-attachments/assets/b09ac181-a38f-4724-b50c-26196174c34e" /><img width="6050" height="2447" alt="TAG_Construction" src="https://github.com/user-attachments/assets/cca598b8-57ed-4f32-948f-c96f6f7fdba8" /><img width="6059" height="3745" alt="instruction" src="https://github.com/user-attachments/assets/aa0cfd9d-5c4a-4bb0-a83b-fba3980b0f6f" /># TAG: Thought-Action Graph for Reasoning over Knowledge Graphs
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
@@ -15,32 +15,13 @@ TAG introduces a dual-layer graph structure that bridges the gap between high-le
 This dual-layer approach enables more interpretable and efficient reasoning over large-scale knowledge graphs like Freebase.
 
 ## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      Thought-Action Graph                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  Thought Layer (Ontology-level)                             │
-│  ┌────────────┐     ┌─────────────┐     ┌────────────┐     │
-│  │   Person   │────▶│  Location   │────▶│   Country   │     │
-│  └────────────┘     └─────────────┘     └────────────┘     │
-│        │                   │                   │            │
-│        ▼                   ▼                   ▼            │
-│  Action Layer (Entity-level)                                │
-│  ┌────────────┐     ┌─────────────┐     ┌────────────┐     │
-│  │  France    │────▶│  Adjoin_S   │────▶│  Germany    │     │
-│  └────────────┘     └─────────────┘     └────────────┘     │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
+<img width="6059" height="3745" alt="instruction" src="https://github.com/user-attachments/assets/4a50d86f-17ee-4288-b87e-9799fdf0aeae" />
 
 ## Quick Start
 
 ### Installation
 
 ```bash
-cd TAG_Open_Source_v2
 pip install -r requirements.txt
 ```
 
@@ -54,12 +35,15 @@ pip install -r requirements.txt
    python encoding.py              # Encode questions and answer types
    python tag_statistics.py        # View TAG statistics
    ```
+   <img width="6050" height="2447" alt="TAG_Construction" src="https://github.com/user-attachments/assets/04854406-b8d7-4dbe-81a1-29428ab189a6" />
 
 2. **Perform Reasoning**:
    ```bash
    cd reasoning
    python reasoning.py             # Run reasoning on your dataset
    ```
+<img width="6695" height="2708" alt="TAG_Reasoning" src="https://github.com/user-attachments/assets/d4d84956-f5a1-4414-bede-99db4e526cfa" />
+
 
 3. **Faster Reasoning** (using saved MACs):
    ```bash
@@ -68,49 +52,6 @@ pip install -r requirements.txt
    # or
    python reasoning_by_tag_gpt4o_mini.py  # Using GPT-4o-mini
    ```
-
-## Project Structure
-
-```
-TAG_Open_Source_v2/
-├── construct_TAG/          # TAG Construction Module
-│   ├── generate_MAC.py     # Generate Meta-Action Chains from datasets
-│   ├── construct_TAG.py    # Construct TAG from MACs
-│   ├── encoding.py         # Encode questions and answer types
-│   ├── tag_statistics.py   # Compute TAG statistics
-│   ├── retrieval.py        # Semantic retrieval functions
-│   └── ThoughtActionGraph.py  # TAG data structure
-│
-├── reasoning/              # Reasoning Module
-│   ├── reasoning.py        # Main reasoning script
-│   ├── retrieval.py        # Dual-layer retrieval methods
-│   ├── thought_action_graph.py  # TAG class for reasoning
-│   └── utils.py            # Utility functions
-│
-├── reasoning_by_macs/      # Fast Reasoning Module
-│   ├── reasoning_by_tag_llama3_1.py    # LLaMA3.1-based reasoning
-│   ├── reasoning_by_tag_gpt4o_mini.py  # GPT-4o-mini-based reasoning
-│   └── utils.py            # Utility functions
-│
-├── data/                   # Training and evaluation data
-│   ├── WebQSP/             # WebQSP dataset
-│   ├── CWQ/                # ComplexWebQuestions dataset
-│   └── GrailQA/            # GrailQA dataset
-│
-├── prompt/                 # Prompt templates
-│   ├── predict_typeName_prompt.txt
-│   ├── generate_meta_action_chain_prompt.txt
-│   └── reasoning_prompt.txt
-│
-├── eval/                   # Evaluation scripts
-│   ├── eval_WebQSP.py
-│   ├── eval_CWQ.py
-│   └── eval_GrailQA.py
-│
-├── requirements.txt        # Main dependencies
-├── config.json.example     # Configuration template
-└── README.md              # This file
-```
 
 ## Main Workflow
 
