@@ -140,9 +140,6 @@ paths = retrieval_from_start_to_end(
 4. **Encoding**: Embed questions and answer types for retrieval
 5. **Retrieval**: Use semantic similarity for query matching and path finding
 
-## License
-
 This is a sub-module of the GRAG project. See the main project for license information.
-=======
-# Thought-Action-Graph-Reasoning
->>>>>>> dcccfba001344ad11c16776012ad5ceb5eddaddc
+
+
