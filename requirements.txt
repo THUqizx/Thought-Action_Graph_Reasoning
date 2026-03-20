@@ -22,5 +22,3 @@ pandas>=1.5.0
 # Progress bars and utilities
 tqdm>=4.65.0
 
-# Additional utilities
-pickle5>=0.0.11; python_version < "3.8"
