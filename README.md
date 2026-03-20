@@ -155,6 +155,34 @@ TAG supports the following KBQA datasets:
 
 Dataset statistics are included in the pre-constructed TAG files.
 
+## Data
+
+All processed data, including Thought-Action Graphs (TAG), embeddings, and training sets, are available on [Hugging Face Datasets](https://huggingface.co/datasets/ZhixiaoQi/Thought-Action_Graph_Reasoning).
+
+The repository is structured as follows:
+
+### 1. `construct_TAG/`
+Contains raw datasets and their extracted reasoning paths:
+* `{WebQSP, CWQ, GrailQA}.train.json`: Original training sets for the three KBQA benchmarks.
+* `MAC_WebQSP_CWQ_GrailQA.json`: **Meta-Action-Chains (MAC)** extracted from the combined datasets, serving as the foundation for TAG construction.
+
+### 2. `embeddings/`
+Pre-computed semantic vectors for efficient retrieval:
+* `Question_Embedding.pkl`: Encoded representations of questions across all datasets.
+* `AnswerTypeName_Embedding.pkl`: Encoded representations of answer types.
+* *Note: These were generated using the **Qwen3-Embedding** model.*
+
+### 3. `TAG/`
+* `TAG.pkl`: The finalized **Thought-Action Graph** built from WebQSP, CWQ, and GrailQA. This file contains the integrated dual-layer structure (Thought Layer and Action Layer).
+
+### 4. `reasoning_by_macs/`
+* Contains pre-saved MAC inference results. Users can use these files to perform **fast reasoning** without re-generating reasoning paths from scratch.
+
+### 5. `train/`
+Specific datasets used for fine-tuning the **LLaMA-3.1** models within the TAG-R framework:
+* `generate_macs.json`: Training data for the **Navigator** (Task: generating reasoning paths).
+* `execute_in_graph.json`: Training data for the **Executor** (Task: executing on the Knowledge Graph).
+
 ## Evaluation
 
 Run evaluation scripts:
