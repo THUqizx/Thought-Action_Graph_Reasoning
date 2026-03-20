@@ -1,7 +1,7 @@
 # TAG: Thought-Action Graph for Reasoning over Knowledge Graphs
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 
 TAG (Thought-Action Graph) is a novel framework for Knowledge Base Question Answering (KBQA) that enables reasoning over knowledge graphs through a dual-layer graph structure representing both abstract ontological reasoning paths and concrete entity-level action chains.
 
